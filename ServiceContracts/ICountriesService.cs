@@ -12,6 +12,6 @@ namespace ServiceContracts
 		/// </summary>
 		/// <param name="countryAddRequest">Country object to add</param>
 		/// <returns>Retruns the country object after adding it</returns>
-		CountryResponse AddCountry(CountryAddRequest countryAddRequest);
+		CountryResponse AddCountry(CountryAddRequest? countryAddRequest);
 	}
 }
