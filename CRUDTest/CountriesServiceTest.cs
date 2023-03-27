@@ -62,5 +62,19 @@ namespace CRUDTest
 			});
 		}
 
+		//When you supply proper country name, it should insert (add) the country to the existing list of countries
+		[Fact]
+		public void AddCountry_ProperCountryDetails()
+		{
+			//Arrange
+			CountryAddRequest? request = new CountryAddRequest() { CountryName = "Canada" };
+
+			//Act
+			CountryResponse response = _countriesService.AddCountry(request);
+
+			//Assert
+			Assert.True(response.CountryId != Guid.Empty);
+		}
+
 	}
 }
