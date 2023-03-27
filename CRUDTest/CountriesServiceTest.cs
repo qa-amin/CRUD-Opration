@@ -30,5 +30,20 @@ namespace CRUDTest
 			});
 		}
 
+		//When the CountryName is null, it should throw ArgumentException
+		[Fact]
+		public void AddCountry_CountryNameIsNull()
+		{
+			//Arrange
+			CountryAddRequest? request = new CountryAddRequest() { CountryName = null };
+
+			//Assert
+			Assert.Throws<ArgumentException>(() =>
+			{
+				//Act
+				_countriesService.AddCountry(request);
+			});
+		}
+
 	}
 }
