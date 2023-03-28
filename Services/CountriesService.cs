@@ -51,10 +51,28 @@ namespace Services
 		#endregion
 
 		#region GetAllCounries
-
 		public List<CountryResponse> GetAllCountries()
 		{
 			return _contries.Select(country => country.ToCountryResponse()).ToList();
+		}
+
+		#endregion
+
+		#region GetCountryByCountryId
+
+		public CountryResponse? GetCountryByCountryId(Guid? countryId)
+		{
+			if(countryId == null)
+			{
+				return null;
+			}
+			Country? country = _contries.FirstOrDefault(country => country.CountryId == countryId);
+			if(country == null)
+			{
+				return null;
+			}
+
+			return country.ToCountryResponse(); 
 		}
 		#endregion
 	}
