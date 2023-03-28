@@ -13,7 +13,7 @@ namespace Services
 		{
 			_contries = new List<Country> ();
 		}
-
+		#region AddCountry
 		public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
 		{
 			// validation CountryAddRequest  ArgumentNullException when it is null
@@ -46,5 +46,16 @@ namespace Services
 
 			return countryResponse;
 		}
+
+
+		#endregion
+
+		#region GetAllCounries
+
+		public List<CountryResponse> GetAllCountries()
+		{
+			throw new NotImplementedException();
+		}
+		#endregion
 	}
 }
