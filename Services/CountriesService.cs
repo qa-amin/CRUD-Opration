@@ -54,7 +54,7 @@ namespace Services
 
 		public List<CountryResponse> GetAllCountries()
 		{
-			throw new NotImplementedException();
+			return _contries.Select(country => country.ToCountryResponse()).ToList();
 		}
 		#endregion
 	}
